@@ -4,8 +4,10 @@ import {
   deleteContact,
   addContact,
   editContact,
-} from './contactsOps';
-import { selectNameFilter } from './filtersSlice';
+} from './operations';
+import { selectNameFilter } from '../filters/selectors';
+import { selectContacts } from './selectors';
+import { logOut } from '../auth/operations';
 
 const slice = createSlice({
   name: 'contacts',
@@ -70,14 +72,15 @@ const slice = createSlice({
       .addCase(editContact.rejected, (state) => {
         state.loading = false;
         state.error = true;
+      })
+      .addCase(logOut.fulfilled, (state) => {
+        state.items = [];
+        state.error = null;
+        state.isLoading = false;
       }),
 });
 
 export default slice.reducer;
-
-export const selectContacts = (state) => state.contacts.items;
-export const selectLoading = (state) => state.contacts.loading;
-export const selectError = (state) => state.contacts.error;
 
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectNameFilter],

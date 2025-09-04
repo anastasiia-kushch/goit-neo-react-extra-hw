@@ -1,23 +1,24 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchContacts } from './redux/contactsOps';
-import { selectError, selectLoading } from './redux/contactsSlice';
+import { fetchContacts } from '../../redux/contacts/operations';
 import {
   ErrorComponent,
   Loader,
-} from './components/StatusIndicators/StatusIndicators';
-import ContactForm from './components/ContactForm/ContactForm';
-import SearchBox from './components/SearchBox/SearchBox';
-import ContactList from './components/ContactList/ContactList';
+} from '../StatusIndicators/StatusIndicators';
+import ContactForm from '../ContactForm/ContactForm';
+import SearchBox from '../SearchBox/SearchBox';
+import ContactList from '../ContactList/ContactList';
 import css from './App.module.css';
+import { selectIsRefreshing } from '../../redux/contacts/selectors';
+import { refreshUser } from '../../redux/auth/operations';
 
 function App() {
   const dispatch = useDispatch();
-  const loading = useSelector(selectLoading);
-  const error = useSelector(selectError);
+  const iRefreshing = useSelector(selectIsRefreshing);
+
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(refreshUser());
   }, [dispatch]);
   return (
     <div>

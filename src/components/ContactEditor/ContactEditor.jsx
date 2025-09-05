@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import toast, { Toaster } from 'react-hot-toast';
-import { editContact } from '../../redux/contactsOps';
-import { selectError, selectLoading } from '../../redux/contactsSlice';
+import { editContact } from '../../redux/contacts/operations';
+import { selectError, selectLoading } from '../../redux/contacts/selectors';
 import { ErrorComponent, Loader } from '../StatusIndicators/StatusIndicators';
 import { IoPerson } from 'react-icons/io5';
 import { IoCall } from 'react-icons/io5';

@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.navItem {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #705257c0;
+  position: relative;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: 600;
+  color: #705257;
+}
+
+.navItem:hover,
+.navItem:focus {
+  color: #705257;
+}
+
+.navItem::after {
+  content: '';
+  display: block;
+  border-radius: 2px;
+  width: 0;
+  height: 4px;
+  background: #705257;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+  transition: width 0.3s ease;
+  z-index: 999;
+}
+
+.navItem.active::after {
+  width: 100%;
+}

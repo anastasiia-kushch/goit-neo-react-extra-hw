@@ -1,3 +1,21 @@
 .title {
   margin-bottom: 28px;
 }
+
+.container {
+  /* border: 1px solid #747474; */
+  border-radius: 6px;
+  padding: 12px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px 10px rgba(190, 190, 188, 0.395);
+  margin-top: 25px;
+}
+
+.hr {
+  border: 0;
+  border-radius: 2px;
+  height: 1px;
+  background: #b0b0b0;
+  margin: 11px 0;
+}
+

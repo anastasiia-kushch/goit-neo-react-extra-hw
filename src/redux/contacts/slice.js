@@ -85,8 +85,6 @@ export default slice.reducer;
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectNameFilter],
   (items, filters) => {
-    return items.filter((item) =>
-      item.name.toLowerCase().includes(filters.name)
-    );
+    return items.filter((item) => item.name.toLowerCase().includes(filters));
   }
 );

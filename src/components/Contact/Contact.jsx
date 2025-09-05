@@ -1,13 +1,13 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import toast, { Toaster } from 'react-hot-toast';
 import { deleteContact } from '../../redux/contacts/operations';
-
+import { selectError, selectLoading } from '../../redux/contacts/selectors';
+import ContactEditor from '../ContactEditor/ContactEditor';
+import { ErrorComponent, Loader } from '../StatusIndicators/StatusIndicators';
 import { IoPerson } from 'react-icons/io5';
 import { IoCall } from 'react-icons/io5';
-
 import css from './Contact.module.css';
-import { useState } from 'react';
-import toast from 'react-hot-toast';
-import { selectError, selectLoading } from '../../redux/contacts/selectors';
 
 export default function Contact({ data: { id, name, number } }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -58,6 +58,7 @@ export default function Contact({ data: { id, name, number } }) {
       <button className={css.button} onClick={handleDelete}>
         Delete
       </button>
+      <Toaster />
     </div>
   );
 }

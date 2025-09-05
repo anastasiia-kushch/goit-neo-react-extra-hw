@@ -1,6 +1,6 @@
-import css from '../StatusIndicators/StatusIndicators.module.css';
 import toast from 'react-hot-toast';
 import { RiseLoader } from 'react-spinners';
+import css from './StatusIndicators.module.css';
 
 export const Loader = () => {
   return (

@@ -8,19 +8,17 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
-  color: #705257c0;
+  color: black;
   position: relative;
   text-decoration: none;
 }
 
 .active {
   font-weight: 600;
-  color: #705257;
 }
 
-.navItem:hover,
-.navItem:focus {
-  color: #705257;
+.navItem:hover {
+  color: #717171;
 }
 
 .navItem::after {
@@ -29,9 +27,9 @@
   border-radius: 2px;
   width: 0;
   height: 4px;
-  background: #705257;
+  background: #000000;
   position: absolute;
-  bottom: -16px;
+  bottom: -14px;
   left: 0;
   transition: width 0.3s ease;
   z-index: 999;

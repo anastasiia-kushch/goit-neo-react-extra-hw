@@ -15,6 +15,7 @@ export default function Contact({ data: { id, name, number } }) {
   const error = useSelector(selectError);
 
   const dispatch = useDispatch();
+  console.log(id);
 
   const handleDelete = () => {
     dispatch(deleteContact(id))
@@ -42,22 +43,24 @@ export default function Contact({ data: { id, name, number } }) {
           id={id}
         />
       ) : (
-        <div className={css.infoContainer}>
-          <div className={css.info}>
-            <IoPerson size={18} />
-            <p onClick={handleClick}>{name}</p>
-          </div>
+        <div className={css.contact}>
+          <div className={css.infoContainer}>
+            <div className={css.info}>
+              <IoPerson size={18} />
+              <p onClick={handleClick}>{name}</p>
+            </div>
 
-          <div className={css.info}>
-            <IoCall size={18} />
-            <p onClick={handleClick}>{number}</p>
+            <div className={css.info}>
+              <IoCall size={18} />
+              <p onClick={handleClick}>{number}</p>
+            </div>
           </div>
+          <button className={css.button} onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       )}
 
-      <button className={css.button} onClick={handleDelete}>
-        Delete
-      </button>
       <Toaster />
     </div>
   );

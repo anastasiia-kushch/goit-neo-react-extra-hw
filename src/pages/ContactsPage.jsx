@@ -26,9 +26,11 @@ export default function Conctacts() {
       {error && <ErrorComponent />}
       {!loading && !error && (
         <div className={css.container}>
-          <h1>Phonebook</h1>
-          <ContactForm />
-          <SearchBox />
+          <div className={css.topContainer}>
+            <h1>Phonebook</h1>
+            <ContactForm />
+            <SearchBox />
+          </div>
           <ContactList />
         </div>
       )}

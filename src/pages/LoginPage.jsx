@@ -6,6 +6,7 @@ import {
 } from '../components/StatusIndicators/StatusIndicators';
 import LoginForm from '../components/LoginForm/LoginForm';
 import css from '../components/App/App.module.css';
+import clsx from 'clsx';
 
 export default function LoginPage() {
   const error = useSelector(selectError);
@@ -15,7 +16,7 @@ export default function LoginPage() {
       {loading && <Loader />}
       {error && <ErrorComponent />}
       {!loading && !error && (
-        <div className={css.container}>
+        <div className={clsx(css.container, css.authContainer)}>
           <h1>Log in</h1>
           <LoginForm />
         </div>

@@ -6,6 +6,7 @@ import {
   ErrorComponent,
 } from '../components/StatusIndicators/StatusIndicators';
 import css from '../components/App/App.module.css';
+import clsx from 'clsx';
 
 export default function RegistrationPage() {
   const loading = useSelector(selectError);
@@ -15,7 +16,7 @@ export default function RegistrationPage() {
       {loading && <Loader />}
       {error && <ErrorComponent />}
       {!loading && !error && (
-        <div className={css.container}>
+        <div className={clsx(css.container, css.authContainer)}>
           <h1>Register your account</h1>
           <RegisterForm />
         </div>

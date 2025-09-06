@@ -18,6 +18,8 @@ export default function ContactEditor({ name, number, edit, id }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(id, nameValue, numberValue);
+
     dispatch(editContact({ name: nameValue, number: numberValue, id }))
       .unwrap()
       .then(() => {

@@ -17,6 +17,8 @@ const LoginPage = lazy(() => import('../../pages/LoginPage'));
 const RegistrationPage = lazy(() => import('../../pages/RegistrationPage'));
 
 function App() {
+  console.log('qwe');
+  
   const dispatch = useDispatch();
   const iRefreshing = useSelector(selectIsRefreshing);
 
@@ -54,3 +56,4 @@ function App() {
 }
 
 export default App;
+
